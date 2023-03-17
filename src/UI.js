@@ -1,13 +1,12 @@
 import { printTodo } from "./Todo";
 
-function ui(e) {
+function uiTodo(e) {
     const title = document.querySelector('#title').value;
     const description = document.querySelector('#description').value;
     const date = document.querySelector('#date').value;
     let list = [];
     list.push(printTodo(title, description, date));
     const titleTodo = document.createTextNode(list[0]["title"]);
-    console.log(list[0]);
     const descriptionTodo = document.createTextNode(list[0]["description"]);
     const dateTodo = document.createTextNode(list[0]["date"]);
     const nodeTitle = document.createElement('p');
@@ -20,9 +19,10 @@ function ui(e) {
     div.append(nodeTitle, nodeAuthor, nodePages);
     e.preventDefault();
 }
+
 export function call() {
     const submitTodo = document.querySelector('.form');
     submitTodo.addEventListener('submit', (e)=>{
-        ui(e)
+        uiTodo(e)
     });
 }

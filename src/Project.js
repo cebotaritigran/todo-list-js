@@ -1,5 +1,10 @@
-export function project(todo) {
-    let todosOfProject = [];
-    todosOfProject.push(todo);
-    return todosOfProject
+export function projectList(title) {
+    class project {
+        constructor(title) {
+            this.title = title
+        }
+    }
+
+    const projectNew = new projectList(title);
+    return projectNew;
 }

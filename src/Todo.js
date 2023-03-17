@@ -1,4 +1,4 @@
-import { project } from "./Project";
+
 
 export function printTodo(title, description, date) {
     class TodoList {
