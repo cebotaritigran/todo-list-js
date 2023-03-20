@@ -4,7 +4,9 @@ import { list, uiTodo } from "./UI";
 export function displayTodoList() {
 
     const content = document.querySelector('.content');
+    // the node that we are going to attach to content div
     const mainTodoList = document.createElement('node');
+    // todo navbar text that we are going to click
     const todoListTab = document.querySelector('.todo-tab');
 
     todoListTab.addEventListener('click', () => {
@@ -18,6 +20,7 @@ export function displayTodoList() {
             </form>
         </div>
         <div class="todos"></div>`
+        // if there are any todos already we have to display them
         const existingTodos = document.querySelector('.todos');
         if(list.length > 0){
             for(let i = 0; i < list.length; i++){

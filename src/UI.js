@@ -1,10 +1,13 @@
 import { getTodo } from "./Todo";
+// list of todos
 export let list = [];
+
 function addTodo(e) {
     const title = document.querySelector('#title').value;
     const description = document.querySelector('#description').value;
     const date = document.querySelector('#date').value;
     list.push(getTodo(title, description, date));
+    // adding new todo at the end of the row
     const titleTodo = document.createTextNode(list[list.length-1]["title"]);
     const descriptionTodo = document.createTextNode(list[list.length-1]["description"]);
     const dateTodo = document.createTextNode(list[list.length-1]["date"]);
@@ -19,6 +22,7 @@ function addTodo(e) {
     e.preventDefault();
 }
 
+// on submit add todo to the todos div
 export function uiTodo() {
     const submitTodo = document.querySelector('.form');
     submitTodo.addEventListener('submit', (e) => {
