@@ -1,3 +1,4 @@
+import { getProject } from "./Project";
 import { getTodo } from "./Todo";
 // list of todos
 export let list = [];
@@ -30,22 +31,19 @@ export function uiTodo() {
     });
 }
 
-// function addProject(e) {
-//     const project = document.querySelector('#project').value;
-//     let list = [];
-//     list.push(project);
-//     const projectTitle = document.createTextNode(list[0]);
-//     const nodeProject = document.createElement('p');
+let projects = [];
+function addProject(e) {
+    const project = document.querySelector('#project').value;
+    projects.push(getProject(project));
+    const projectTitle = document.createTextNode(projects[projects.length-1]["title"]);
+    const projectsList = document.querySelector('.projects');
+    projectsList.innerHTML += `<div>${projects[projects.length-1]["title"]}</div>`
+    e.preventDefault();
+}
 
-//     nodeProject.appendChild(projectTitle);
-//     const div = document.querySelector('.result');
-//     div.appendChild(nodeProject);
-//     e.preventDefault();
-// }
-
-// export function uiProject() {
-//     const submitProject = document.querySelector('.project');
-//     submitProject.addEventListener('submit', (e) => {
-//         addProject(e);
-//     });
-// }
+export function uiProject() {
+    const submitProject = document.querySelector('.project');
+    submitProject.addEventListener('submit', (e) => {
+        addProject(e);
+    });
+}

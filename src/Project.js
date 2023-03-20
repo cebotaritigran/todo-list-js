@@ -1,10 +1,12 @@
-export function projectList(title) {
+export function getProject(title) {
     class Project {
-        constructor(title) {
+        constructor(title, projectTodoList = []) {
             this.title = title
+            this.projectTodoList = projectTodoList
         }
     }
 
-    const projectNew = new Project(title);
-    return projectNew;
+    const project = new Project(title);
+    //project["projectTodoList"].push();
+    return project;
 }
