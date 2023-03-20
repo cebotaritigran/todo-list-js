@@ -1,7 +1,7 @@
 
 
-export function printTodo(title, description, date) {
-    class TodoList {
+export function getTodo(title, description, date) {
+    class Todo {
         constructor(title, description, date) {
             this.title = title
             this.description = description
@@ -9,6 +9,6 @@ export function printTodo(title, description, date) {
         }
     }
 
-    const itemOne = new TodoList(title, description, date);
-    return itemOne;
+    const todo = new Todo(title, description, date);
+    return todo;
 }

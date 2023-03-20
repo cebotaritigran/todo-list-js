@@ -1,2 +1,3 @@
-import { call } from "./UI";
-call();
+import { uiProject, uiTodo } from "./UI";
+uiTodo();
+uiProject();

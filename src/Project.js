@@ -1,10 +1,10 @@
 export function projectList(title) {
-    class project {
+    class Project {
         constructor(title) {
             this.title = title
         }
     }
 
-    const projectNew = new projectList(title);
+    const projectNew = new Project(title);
     return projectNew;
 }
