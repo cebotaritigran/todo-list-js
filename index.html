@@ -18,25 +18,29 @@
         <div class="logo">Todo</div>
     </header>
     <main class="main">
-        <div class="todo-list">Todo List</div>
+        <div class="side-bar">
+            <div class="todo-tab">Todo List</div>
+            <div class="project-tab"></div>
+        </div>
         <div class="content">
-            <div class="form-container">
-                <form autocomplete="off" class="form">
-                    <input id="title" type="text" placeholder="Title" minlength="3" maxlength="40" required>
-                    <input id="description" type="text" placeholder="description" minlength="3" required>
-                    <input id="date" type="date" placeholder="date" required>
-                    <button class="book-add-button" type="submit">Submit</button>
+            <div class="main-todo-list">
+                <div class="form-container">
+                    <form autocomplete="off" class="form">
+                        <input id="title" type="text" placeholder="Title" minlength="3" maxlength="40" required>
+                        <input id="description" type="text" placeholder="description" minlength="3" required>
+                        <input id="date" type="date" placeholder="date" required>
+                        <button class="book-add-button" type="submit">Submit</button>
+                    </form>
+                </div>
+                <div class="todos"></div>
+            </div>
+            <div class="project-form">
+                <form class="project" autocomplete="off">
+                    <input type="text" id="project">
+                    <button type="submit"> submit</button>
                 </form>
             </div>
-            <div class="result"></div>
         </div>
-        <div class="project-form">
-            <form class="project" autocomplete="off">
-                <input type="text" id="project">
-                <button type="submit"> submit</button>
-            </form>
-        </div>
-
     </main>
 </body>
 
