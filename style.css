@@ -1,10 +1,12 @@
 :root{
     font-family: 'Roboto', sans-serif;
+    --header-background: rgb(61, 61, 73);
 }
 
 body{
     margin: 0;
     padding: 0;
+    width: 100vw;
 }
 
 /* HEADER */
@@ -14,13 +16,41 @@ body{
     display: flex;
     align-items: center;
     padding: 20px 5px;
+    background-color: var(--header-background);
+    color: white;
 }
 
 /* MAIN */
-.content{
+.main{
+    display: flex;
+    gap: 20px;
+}
 
+.side-bar{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.todo-tab{
+    cursor: pointer;
+}
+
+.title{
+    font-size: 22px;
+}
+
+.project-tab{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.content{
+    display: flex;
 }
 
 .main-todo-list{
-    
+
 }
