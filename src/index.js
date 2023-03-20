@@ -1,5 +1,5 @@
-import { displayTodoList } from "./todoListTab";
+import { displayTodoList } from "./TodoListTab";
 import { uiProject, uiTodo } from "./UI";
 displayTodoList();
-uiTodo();
-uiProject();
+
+

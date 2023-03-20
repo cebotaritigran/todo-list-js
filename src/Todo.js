@@ -1,5 +1,3 @@
-
-
 export function getTodo(title, description, date) {
     class Todo {
         constructor(title, description, date) {
@@ -8,7 +6,6 @@ export function getTodo(title, description, date) {
             this.date = date
         }
     }
-
     const todo = new Todo(title, description, date);
     return todo;
 }
