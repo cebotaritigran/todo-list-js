@@ -10,7 +10,9 @@ export function displayTodoList() {
     const todoListTab = document.querySelector('.todo-tab');
 
     todoListTab.addEventListener('click', () => {
-        mainTodoList.innerHTML = `<div class="main-todo-list">
+        // replace every element in content
+        content.replaceChildren();
+        content.innerHTML += `<div class="main-todo-list">
         <div class="form-container">
             <form autocomplete="off" class="form">
                 <input id="title" type="text" placeholder="Title" minlength="3" maxlength="40" required>
@@ -22,14 +24,16 @@ export function displayTodoList() {
         <div class="todos"></div>`
         // if there are any todos already we have to display them
         const existingTodos = document.querySelector('.todos');
-        if(list.length > 0){
-            for(let i = 0; i < list.length; i++){
+        if (list.length > 0) {
+            for (let i = 0; i < list.length; i++) {
+
                 existingTodos.innerHTML += `<p>${list[i]["title"]}</p>`
                 existingTodos.innerHTML += `<p>${list[i]["description"]}</p>`
                 existingTodos.innerHTML += `<p>${list[i]["date"]}</p>`
             }
         }
-        content.appendChild(mainTodoList);
+
+
         uiTodo();
     });
 }

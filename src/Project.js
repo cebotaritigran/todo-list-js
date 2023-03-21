@@ -1,8 +1,7 @@
 export function getProject(title) {
     class Project {
-        constructor(title, projectTodoList = []) {
+        constructor(title) {
             this.title = title
-            this.projectTodoList = projectTodoList
         }
     }
 

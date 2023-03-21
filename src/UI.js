@@ -1,23 +1,27 @@
 import { getProject } from "./Project";
+
 import { getTodo } from "./Todo";
+
 // list of todos
 export let list = [];
-
 function addTodo(e) {
     const title = document.querySelector('#title').value;
     const description = document.querySelector('#description').value;
     const date = document.querySelector('#date').value;
     list.push(getTodo(title, description, date));
     // adding new todo at the end of the row
-    const titleTodo = document.createTextNode(list[list.length-1]["title"]);
-    const descriptionTodo = document.createTextNode(list[list.length-1]["description"]);
-    const dateTodo = document.createTextNode(list[list.length-1]["date"]);
+    const titleTodo = document.createTextNode(list[list.length - 1]["title"]);
+    const descriptionTodo = document.createTextNode(list[list.length - 1]["description"]);
+    const dateTodo = document.createTextNode(list[list.length - 1]["date"]);
+
     const nodeTitle = document.createElement('p');
     const nodeDescription = document.createElement('p');
     const nodeDate = document.createElement('p');
+
     nodeTitle.appendChild(titleTodo);
     nodeDescription.appendChild(descriptionTodo);
     nodeDate.appendChild(dateTodo);
+
     const div = document.querySelector('.todos');
     div.append(nodeTitle, nodeDescription, nodeDate);
     e.preventDefault();
@@ -31,13 +35,12 @@ export function uiTodo() {
     });
 }
 
-let projects = [];
+export let projectsAndTodoList = [];
 function addProject(e) {
     const project = document.querySelector('#project').value;
-    projects.push(getProject(project));
-    const projectTitle = document.createTextNode(projects[projects.length-1]["title"]);
+    projectsAndTodoList.push(getProject(project));
     const projectsList = document.querySelector('.projects');
-    projectsList.innerHTML += `<div>${projects[projects.length-1]["title"]}</div>`
+    projectsList.innerHTML += `<div class="project-title" value="${projectsAndTodoList.length - 1}">${projectsAndTodoList[projectsAndTodoList.length - 1]["title"]}</div>`
     e.preventDefault();
 }
 
@@ -47,3 +50,4 @@ export function uiProject() {
         addProject(e);
     });
 }
+
