@@ -16,7 +16,7 @@ export function displayTodoList() {
                 <input id="title" type="text" placeholder="Title" minlength="3" maxlength="40" required>
                 <input id="description" type="text" placeholder="description" minlength="3" required>
                 <input id="date" type="date" placeholder="date" required>
-                <button class="book-add-button" type="submit">Submit</button>
+                <button class="todo-add-button" type="submit">Submit</button>
             </form>
         </div>
         <div class="todos"></div>`
@@ -24,10 +24,12 @@ export function displayTodoList() {
         const existingTodos = document.querySelector('.todos');
         if (list.length > 0) {
             for (let i = 0; i < list.length; i++) {
-
-                existingTodos.innerHTML += `<p>${list[i]["title"]}</p>`
-                existingTodos.innerHTML += `<p>${list[i]["description"]}</p>`
-                existingTodos.innerHTML += `<p>${list[i]["date"]}</p>`
+                const todoBox = document.createElement('div');
+                todoBox.setAttribute('class','todo-box')
+                todoBox.innerHTML += `<p>${list[i]["title"]}</p>`
+                todoBox.innerHTML += `<p>${list[i]["description"]}</p>`
+                todoBox.innerHTML += `<p>${list[i]["date"]}</p>`
+                existingTodos.appendChild(todoBox);
             }
         }
         submitTodo();

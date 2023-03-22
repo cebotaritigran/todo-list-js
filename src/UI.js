@@ -24,7 +24,10 @@ function addTodo(e) {
     nodeDate.appendChild(dateTodo);
 
     const div = document.querySelector('.todos');
-    div.append(nodeTitle, nodeDescription, nodeDate);
+    const todoBox = document.createElement('div');
+    todoBox.setAttribute('class','todo-box')
+    todoBox.append(nodeTitle, nodeDescription, nodeDate);
+    div.appendChild(todoBox);
     e.preventDefault();
 }
 
@@ -83,7 +86,10 @@ function addTodoInProject(e, index) {
     nodeDate.appendChild(dateTodo);
 
     const div = document.querySelector('.todos');
-    div.append(nodeTitle, nodeDescription, nodeDate);
+    const todoBox = document.createElement('div');
+    todoBox.setAttribute('class','todo-box')
+    todoBox.append(nodeTitle, nodeDescription, nodeDate);
+    div.appendChild(todoBox);
     e.preventDefault();
 }
 
