@@ -1,11 +1,9 @@
-import { list, uiTodo } from "./UI";
+import { list, submitTodo } from "./UI";
 
 // displays form and todos on click
 export function displayTodoList() {
 
     const content = document.querySelector('.content');
-    // the node that we are going to attach to content div
-    const mainTodoList = document.createElement('node');
     // todo navbar text that we are going to click
     const todoListTab = document.querySelector('.todo-tab');
 
@@ -32,8 +30,6 @@ export function displayTodoList() {
                 existingTodos.innerHTML += `<p>${list[i]["date"]}</p>`
             }
         }
-
-
-        uiTodo();
+        submitTodo();
     });
 }

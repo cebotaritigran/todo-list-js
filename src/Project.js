@@ -9,3 +9,14 @@ export function getProject(title) {
     //project["projectTodoList"].push();
     return project;
 }
+
+export function getArray(array) {
+    class List {
+        constructor(array = []) {
+            this.array = array
+        }
+    }
+
+    const list = new List(array);
+    return list;
+}
