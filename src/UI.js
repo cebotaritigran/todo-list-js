@@ -44,10 +44,8 @@ function addProject(e) {
     projects.push(getProject(project));
     const projectsList = document.querySelector('.projects');
     projectsList.innerHTML += `<div class="project-title" value="${projects.length - 1}">${projects[projects.length - 1]["title"]}</div>`
-
     let todoList = [];
     todoInProject.push(todoList);
-
     displayTodoListProject();
     e.preventDefault();
 }
@@ -59,6 +57,8 @@ export function submitProject() {
     });
 }
 
+
+
 // add todo inside given project tab
 
 function addTodoInProject(e, index) {
@@ -67,7 +67,6 @@ function addTodoInProject(e, index) {
     const date = document.querySelector('#date').value;
 
     todoInProject[index].push(getTodo(title, description, date));
-
 
     let uiList;
     uiList = todoInProject[index]
