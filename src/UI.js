@@ -93,3 +93,29 @@ export function submitProjectTodo(index) {
         addTodoInProject(e, index);
     });
 }
+
+//hide-how side bar
+
+export function hideShowButton() {
+    const todoTab = document.querySelector('.todo-tab');
+    const title = document.querySelector('.title');
+    const projectForm = document.querySelector('.project-form');
+    const projects = document.querySelector('.projects');
+    const hSButton = document.querySelector('.hide-show');
+    hSButton.addEventListener('click', () => {
+        if (todoTab.style.display == "none") {
+            todoTab.style.display = "flex";
+            title.style.display = "flex";
+            projectForm.style.display = "flex";
+            projects.style.display = "flex";
+            hSButton.textContent = "Hide";
+
+        } else {
+            todoTab.style.display = "none";
+            title.style.display = "none";
+            projectForm.style.display = "none";
+            projects.style.display = "none";
+            hSButton.textContent = "Show";
+        }
+    });
+}
