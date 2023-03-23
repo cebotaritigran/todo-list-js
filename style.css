@@ -191,6 +191,20 @@ a {
     outline: 1px solid black;
 }
 
+.remove-button{
+    height: 35px;
+    background-color:rgb(255, 78, 78);
+    color: white;
+    border: none;
+    font-size: 24px;
+    width: 100px;
+}
+
+.remove-button:hover{
+    background-color: rgb(248, 164, 85);
+    cursor: pointer;
+}
+
 @media only screen and (max-width: 600px) {
     .header {
         justify-content: center;
