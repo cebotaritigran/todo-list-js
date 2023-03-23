@@ -25,9 +25,30 @@ function addTodo(e) {
 
     const div = document.querySelector('.todos');
     const todoBox = document.createElement('div');
-    todoBox.setAttribute('class','todo-box')
-    todoBox.append(nodeTitle, nodeDescription, nodeDate);
+    todoBox.setAttribute('class', 'todo-box')
+
+    // remove button to remove given todo list item
+    todoBox.setAttribute('id', list.length - 1);
+    const removeButton = document.createElement('button');
+    removeButton.textContent = 'Remove';
+    removeButton.setAttribute('class', 'remove-button');
+    removeButton.setAttribute('value', list.length - 1);
+    console.log(list);
+    removeButton.addEventListener('click', () => {
+        let position = parseInt(removeButton.value);
+        let positionText = position.toString();
+        list.splice(position, 1);
+        console.log(list);
+        const toRemove = document.getElementById(positionText);
+        if (toRemove) {
+            toRemove.remove();
+        }
+    });
+
+    todoBox.append(nodeTitle, nodeDescription, nodeDate, removeButton);
+
     div.appendChild(todoBox);
+
     e.preventDefault();
 }
 
@@ -87,7 +108,7 @@ function addTodoInProject(e, index) {
 
     const div = document.querySelector('.todos');
     const todoBox = document.createElement('div');
-    todoBox.setAttribute('class','todo-box')
+    todoBox.setAttribute('class', 'todo-box')
     todoBox.append(nodeTitle, nodeDescription, nodeDate);
     div.appendChild(todoBox);
     e.preventDefault();
