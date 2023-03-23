@@ -74,8 +74,6 @@ body {
     padding: var(--side-bar-projects-pd);
 }
 
-.project-form {}
-
 .project {
     padding: var(--side-bar-projects-pd);
     display: flex;
@@ -181,14 +179,14 @@ a {
     color: white;
 }
 
-.todos{
+.todos {
     margin: 20px 0px;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.todo-box{
+.todo-box {
     padding: 5px;
     outline: 1px solid black;
 }
